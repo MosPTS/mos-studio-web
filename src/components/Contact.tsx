@@ -3,10 +3,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Phone, Mail, Instagram } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Contact = () => {
   const { toast } = useToast();
+  const { t } = useLanguage();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -23,7 +25,7 @@ const Contact = () => {
     if (!formData.name || !formData.email || !formData.message) {
       toast({
         title: "Error",
-        description: "Please fill in all required fields.",
+        description: t('contact.form.error'),
         variant: "destructive",
       });
       setIsSubmitting(false);
@@ -55,7 +57,7 @@ const Contact = () => {
       if (response.ok) {
         toast({
           title: "Success!",
-          description: "Your message has been sent. We'll get back to you soon!",
+          description: t('contact.form.success'),
         });
         setFormData({ name: "", email: "", phone: "", message: "" });
       } else {
@@ -75,21 +77,27 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: MapPin,
-      label: "Address",
+      label: t('contact.address'),
       value: "Demircikara Mahallesi, 1431 Sokak No:8/1",
       subValue: "Antalya-Muratpaşa, Turkey",
     },
     {
       icon: Phone,
-      label: "Phone",
+      label: t('contact.phone'),
       value: "+90 532 301 1997",
       link: "tel:+905323011997",
     },
     {
       icon: Mail,
-      label: "Email",
+      label: t('contact.email'),
       value: "mospersonalcoaching@gmail.com",
       link: "mailto:mospersonalcoaching@gmail.com",
+    },
+    {
+      icon: Instagram,
+      label: t('contact.instagram'),
+      value: "@mos.personaltraining",
+      link: "https://instagram.com/mos.personaltraining",
     },
   ];
 
@@ -98,10 +106,10 @@ const Contact = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 font-roboto">
-            Get in Touch
+            {t('contact.title')}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-roboto">
-            Ready to start your fitness journey? Contact us to schedule your first session
+            {t('contact.subtitle')}
           </p>
         </div>
 
@@ -109,7 +117,7 @@ const Contact = () => {
           {/* Contact Information */}
           <div className="space-y-8">
             <h3 className="text-2xl font-bold text-foreground mb-6 font-roboto">
-              Contact Information
+              {t('contact.title')}
             </h3>
             {contactInfo.map((info, index) => (
               <div key={index} className="flex items-start space-x-4">
@@ -143,13 +151,13 @@ const Contact = () => {
           {/* Contact Form */}
           <div>
             <h3 className="text-2xl font-bold text-foreground mb-6 font-roboto">
-              Send us a Message
+              {t('contact.form.title')}
             </h3>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <Input
                   type="text"
-                  placeholder="Your Name *"
+                  placeholder={t('contact.form.name') + ' *'}
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   className="bg-input/50 border-border text-foreground placeholder:text-muted-foreground font-roboto"
@@ -159,7 +167,7 @@ const Contact = () => {
               <div>
                 <Input
                   type="email"
-                  placeholder="Your Email *"
+                  placeholder={t('contact.form.email') + ' *'}
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   className="bg-input/50 border-border text-foreground placeholder:text-muted-foreground font-roboto"
@@ -169,7 +177,7 @@ const Contact = () => {
               <div>
                 <Input
                   type="tel"
-                  placeholder="Your Phone"
+                  placeholder={t('contact.phone')}
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   className="bg-input/50 border-border text-foreground placeholder:text-muted-foreground font-roboto"
@@ -177,7 +185,7 @@ const Contact = () => {
               </div>
               <div>
                 <Textarea
-                  placeholder="Your Message / Training Preferences *"
+                  placeholder={t('contact.form.message') + ' *'}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   className="bg-input/50 border-border text-foreground placeholder:text-muted-foreground min-h-[150px] font-roboto"
@@ -191,7 +199,7 @@ const Contact = () => {
                 disabled={isSubmitting}
                 className="w-full"
               >
-                {isSubmitting ? "Sending..." : "Send Message"}
+                {isSubmitting ? "..." : t('contact.form.submit')}
               </Button>
             </form>
           </div>

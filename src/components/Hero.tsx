@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 import logo from "@/assets/logo.jpg";
 import heroImage from "@/assets/hero-gym.jpg";
 
 const Hero = () => {
+  const { t } = useLanguage();
+  
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: "smooth" });
@@ -28,10 +31,10 @@ const Hero = () => {
           className="w-64 md:w-80 lg:w-96 mx-auto mb-8 animate-fade-in"
         />
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-light text-foreground mb-6 font-roboto">
-          Personalized Fitness Training in Small Groups
+          {t('hero.title')}
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto font-roboto font-light">
-          Tailored to Your Goals
+          {t('hero.subtitle')}
         </p>
         <Button 
           variant="hero" 
@@ -39,7 +42,7 @@ const Hero = () => {
           onClick={() => scrollToSection('contact')}
           className="animate-fade-in"
         >
-          Start Your Journey
+          {t('hero.cta')}
         </Button>
       </div>
 

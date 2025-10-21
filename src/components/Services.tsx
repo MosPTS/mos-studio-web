@@ -1,27 +1,30 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Users, Target, Dumbbell, Heart } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Services = () => {
+  const { t } = useLanguage();
+  
   const services = [
     {
       icon: Users,
-      title: "Small Group Sessions",
-      description: "Maximum 4-person groups ensure personalized attention and form correction for every exercise.",
+      title: t('services.small.title'),
+      description: t('services.small.desc'),
     },
     {
       icon: Target,
-      title: "Custom Programs",
-      description: "Programs tailored to your individual goals, covering strength, cardio, flexibility, and mobility training.",
+      title: t('services.custom.title'),
+      description: t('services.custom.desc'),
     },
     {
       icon: Dumbbell,
-      title: "Modern Equipment",
-      description: "State-of-the-art equipment in a clean, spacious studio environment designed for optimal training.",
+      title: t('services.equipment.title'),
+      description: t('services.equipment.desc'),
     },
     {
       icon: Heart,
-      title: "One-on-One Service",
-      description: "Personal approach ensuring optimal results, safety, and continuous support throughout your fitness journey.",
+      title: t('services.personal.title'),
+      description: t('services.personal.desc'),
     },
   ];
 
@@ -30,10 +33,10 @@ const Services = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 font-roboto">
-            Our Services
+            {t('services.title')}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-roboto">
-            Comprehensive fitness solutions designed around your unique needs and goals
+            {t('services.subtitle')}
           </p>
         </div>
 

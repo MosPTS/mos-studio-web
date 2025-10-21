@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Navigation = () => {
+  const { language, setLanguage, t } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -21,9 +23,9 @@ const Navigation = () => {
   };
 
   const navLinks = [
-    { id: "home", label: "Home" },
-    { id: "services", label: "Services" },
-    { id: "contact", label: "Contact" },
+    { id: "home", label: t('nav.home') },
+    { id: "services", label: t('nav.services') },
+    { id: "contact", label: t('nav.contact') },
   ];
 
   return (
@@ -37,13 +39,14 @@ const Navigation = () => {
           {/* Logo/Brand */}
           <button
             onClick={() => scrollToSection("home")}
-            className="text-xl md:text-2xl font-bold text-primary hover:text-primary/80 transition-colors"
+            className="flex items-baseline gap-2 hover:opacity-80 transition-opacity"
           >
-            MOS
+            <span className="text-xl md:text-2xl font-bold text-primary">MOS</span>
+            <span className="text-xs md:text-sm text-foreground font-medium">Personal Training Studio</span>
           </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <button
                 key={link.id}
@@ -53,6 +56,17 @@ const Navigation = () => {
                 {link.label}
               </button>
             ))}
+            
+            {/* Language Switcher */}
+            <div className="flex items-center gap-2 border-l border-border pl-6">
+              <Globe size={18} className="text-muted-foreground" />
+              <button
+                onClick={() => setLanguage(language === 'tr' ? 'en' : 'tr')}
+                className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+              >
+                {language === 'tr' ? 'EN' : 'TR'}
+              </button>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -78,6 +92,15 @@ const Navigation = () => {
                 {link.label}
               </button>
             ))}
+            
+            {/* Mobile Language Switcher */}
+            <button
+              onClick={() => setLanguage(language === 'tr' ? 'en' : 'tr')}
+              className="flex items-center gap-2 w-full text-left text-foreground hover:text-primary transition-colors py-2 font-medium border-t border-border pt-4 mt-2"
+            >
+              <Globe size={18} />
+              <span>{language === 'tr' ? 'English' : 'Türkçe'}</span>
+            </button>
           </div>
         </div>
       )}

@@ -1,6 +1,9 @@
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Phone, Mail, Instagram } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
+  const { t } = useLanguage();
+  
   return (
     <footer className="bg-background/95 border-t border-border py-8 px-4">
       <div className="max-w-7xl mx-auto">
@@ -16,7 +19,7 @@ const Footer = () => {
           {/* Quick Contact */}
           <div>
             <h4 className="text-lg font-semibold text-foreground mb-4 font-roboto">
-              Quick Contact
+              {t('contact.title')}
             </h4>
             <div className="space-y-2">
               <a 
@@ -33,13 +36,22 @@ const Footer = () => {
                 <Mail className="w-4 h-4 mr-2" />
                 mospersonalcoaching@gmail.com
               </a>
+              <a 
+                href="https://instagram.com/mos.personaltraining" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center text-sm text-muted-foreground hover:text-primary transition-colors font-roboto"
+              >
+                <Instagram className="w-4 h-4 mr-2" />
+                @mos.personaltraining
+              </a>
             </div>
           </div>
 
           {/* Location */}
           <div>
             <h4 className="text-lg font-semibold text-foreground mb-4 font-roboto">
-              Location
+              {t('contact.address')}
             </h4>
             <div className="flex items-start text-sm text-muted-foreground font-roboto">
               <MapPin className="w-4 h-4 mr-2 mt-1 flex-shrink-0" />
@@ -55,7 +67,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="border-t border-border pt-6 text-center">
           <p className="text-sm text-muted-foreground font-roboto">
-            © 2025 MOS Personal Training Studio. All rights reserved.
+            {t('footer.copyright')}
           </p>
         </div>
       </div>
