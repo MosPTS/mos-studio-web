@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: '/mos-studio-web/', // GitHub Pages için base path
+  base: mode === 'production' ? '/mos-studio-web/' : '/', // GitHub Pages için base path
   server: {
     host: "::",
     port: 8080,

@@ -111,6 +111,8 @@ Your site will be available at: `https://username.github.io/repository-name/`
 
 © 2025 MOS Personal Training Studio. All rights reserved.
 
+<!-- Trigger redeploy -->
+
 ---
 
 # MOS Personal Training Studio
