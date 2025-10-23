@@ -23,8 +23,17 @@ jobs:
     - name: Install dependencies
       run: npm ci
 
-    - name: Build with explicit base
-      run: npm run build -- --base=/mos-studio-web/
+    - name: Build
+      run: npm run build
+    
+    - name: Verify build assets
+      run: |
+        echo "Checking build output:"
+        ls -la dist/
+        echo "Checking if assets directory exists:"
+        ls -la dist/assets/ || echo "No assets directory found"
+        echo "Checking index.html content:"
+        head -20 dist/index.html
     
     - name: Add SPA fallback (404.html)
       run: cp dist/index.html dist/404.html
