@@ -1,73 +1,188 @@
-# Welcome to your Lovable project
+# MOS Personal Training Studio
 
-## Project info
+A modern, responsive website for MOS Personal Training Studio - a premium fitness center in Antalya, Turkey, specializing in personalized training in small groups.
 
-**URL**: https://lovable.dev/projects/02e56ad9-ece6-4a1f-b6b8-231d1ea9b45e
+## 🌟 Features
 
-## How can I edit this code?
+- **Bilingual Support**: Full Turkish and English language support with easy switching
+- **Responsive Design**: Optimized for all devices (mobile, tablet, desktop)
+- **Modern UI**: Clean, professional design with cyan/blue color scheme
+- **Contact Form**: Integrated appointment request system via Formspree
+- **SEO Optimized**: Semantic HTML and proper meta tags
 
-There are several ways of editing your application.
+## 🚀 Tech Stack
 
-**Use Lovable**
+- **React 18** - Modern UI library
+- **TypeScript** - Type-safe development
+- **Vite** - Fast build tool
+- **Tailwind CSS** - Utility-first CSS framework
+- **Radix UI** - Accessible component primitives
+- **Lucide React** - Beautiful icons
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/02e56ad9-ece6-4a1f-b6b8-231d1ea9b45e) and start prompting.
+## 📦 Installation
 
-Changes made via Lovable will be committed automatically to this repo.
+1. Clone the repository:
+```bash
+git clone <your-repo-url>
+cd mos-personal-training
+```
 
-**Use your preferred IDE**
+2. Install dependencies:
+```bash
+npm install
+```
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+3. Start development server:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+4. Build for production:
+```bash
+npm run build
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🔧 Configuration
 
-**Use GitHub Codespaces**
+### Contact Form Setup
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+The contact form uses Formspree. To configure:
 
-## What technologies are used for this project?
+1. Sign up at [Formspree.io](https://formspree.io)
+2. Create a new form
+3. Replace the form endpoint in `src/components/Contact.tsx`:
+```typescript
+const response = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+```
 
-This project is built with:
+## 📝 Customization
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Colors
+Edit the color scheme in `src/index.css` and `tailwind.config.ts`. All colors use HSL format.
 
-## How can I deploy this project?
+### Translations
+Add or modify translations in `src/contexts/LanguageContext.tsx`.
 
-Simply open [Lovable](https://lovable.dev/projects/02e56ad9-ece6-4a1f-b6b8-231d1ea9b45e) and click on Share -> Publish.
+### Images
+Replace images in `src/assets/` directory:
+- `logo.png` - Main logo (transparent background)
+- `hero-gym.jpg` - Hero section background
 
-## Can I connect a custom domain to my Lovable project?
+## 🌐 Deployment
 
-Yes, you can!
+### Deploy to Netlify/Vercel
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+1. Push your code to GitHub
+2. Connect your repository to Netlify or Vercel
+3. Build command: `npm run build`
+4. Publish directory: `dist`
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+### Deploy to GitHub Pages
+
+```bash
+npm run build
+# Deploy the dist folder to GitHub Pages
+```
+
+## 📞 Contact Information
+
+- **Address**: Demircikara Mahallesi, 1431 Sokak No:8/1, Antalya-Muratpaşa, Turkey
+- **Phone**: +90 532 301 1997
+- **Email**: mospersonalcoaching@gmail.com
+- **Instagram**: @mos.personaltraining
+
+## 📄 License
+
+© 2025 MOS Personal Training Studio. All rights reserved.
+
+---
+
+# MOS Personal Training Studio
+
+Antalya, Türkiye'de küçük gruplarda kişiselleştirilmiş antrenman hizmeti sunan premium bir fitness merkezi için modern, responsive web sitesi.
+
+## 🌟 Özellikler
+
+- **İki Dilli Destek**: Kolay geçiş ile tam Türkçe ve İngilizce dil desteği
+- **Responsive Tasarım**: Tüm cihazlar için optimize edilmiş (mobil, tablet, masaüstü)
+- **Modern Arayüz**: Temiz, profesyonel tasarım ve cyan/mavi renk paleti
+- **İletişim Formu**: Formspree ile entegre randevu talep sistemi
+- **SEO Optimize**: Semantik HTML ve uygun meta etiketleri
+
+## 🚀 Teknoloji Yığını
+
+- **React 18** - Modern UI kütüphanesi
+- **TypeScript** - Tip güvenli geliştirme
+- **Vite** - Hızlı build aracı
+- **Tailwind CSS** - Utility-first CSS framework
+- **Radix UI** - Erişilebilir bileşen primitifleri
+- **Lucide React** - Güzel ikonlar
+
+## 📦 Kurulum
+
+1. Depoyu klonlayın:
+```bash
+git clone <repo-url>
+cd mos-personal-training
+```
+
+2. Bağımlılıkları yükleyin:
+```bash
+npm install
+```
+
+3. Geliştirme sunucusunu başlatın:
+```bash
+npm run dev
+```
+
+4. Production için build edin:
+```bash
+npm run build
+```
+
+## 🔧 Yapılandırma
+
+### İletişim Formu Kurulumu
+
+İletişim formu Formspree kullanır. Yapılandırma için:
+
+1. [Formspree.io](https://formspree.io) adresinden kayıt olun
+2. Yeni bir form oluşturun
+3. `src/components/Contact.tsx` dosyasındaki form endpoint'ini değiştirin:
+```typescript
+const response = await fetch("https://formspree.io/f/FORM_ID", {
+```
+
+## 📝 Özelleştirme
+
+### Renkler
+Renk şemasını `src/index.css` ve `tailwind.config.ts` dosyalarında düzenleyin. Tüm renkler HSL formatındadır.
+
+### Çeviriler
+`src/contexts/LanguageContext.tsx` dosyasında çevirileri ekleyin veya değiştirin.
+
+### Görseller
+`src/assets/` dizinindeki görselleri değiştirin:
+- `logo.png` - Ana logo (şeffaf arka plan)
+- `hero-gym.jpg` - Hero bölümü arka plan görseli
+
+## 🌐 Deployment
+
+### Netlify/Vercel'e Deploy
+
+1. Kodunuzu GitHub'a gönderin
+2. Repository'nizi Netlify veya Vercel'e bağlayın
+3. Build komutu: `npm run build`
+4. Publish dizini: `dist`
+
+## 📞 İletişim Bilgileri
+
+- **Adres**: Demircikara Mahallesi, 1431 Sokak No:8/1, Antalya-Muratpaşa, Türkiye
+- **Telefon**: +90 532 301 1997
+- **E-posta**: mospersonalcoaching@gmail.com
+- **Instagram**: @mos.personaltraining
+
+## 📄 Lisans
+
+© 2025 MOS Personal Training Studio. Tüm hakları saklıdır.
