@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
-import logo from "@/assets/logo.jpg";
+import logo from "@/assets/logo.png";
 import heroImage from "@/assets/hero-gym.jpg";
 
 const Hero = () => {
@@ -33,9 +33,6 @@ const Hero = () => {
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-light text-foreground mb-6 font-roboto">
           {t('hero.title')}
         </h1>
-        <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto font-roboto font-light">
-          {t('hero.subtitle')}
-        </p>
         <Button 
           variant="hero" 
           size="lg" 

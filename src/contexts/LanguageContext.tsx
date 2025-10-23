@@ -16,21 +16,21 @@ const translations = {
     'nav.contact': 'İletişim',
     
     // Hero
-    'hero.title': 'Küçük Gruplarda Kişiselleştirilmiş Fitness Antrenmanı',
-    'hero.subtitle': 'Hedeflerinize Özel',
+    'hero.title': 'Hedeflerinize Özel, Profesyonel ve Kişiselleştirilmiş Fitness Yolculuğu',
+    'hero.subtitle': '',
     'hero.cta': 'Yolculuğunuza Başlayın',
     
     // Services
     'services.title': 'Hizmetlerimiz',
     'services.subtitle': 'Hedeflerinize ulaşmanıza yardımcı olacak kapsamlı antrenman programları',
-    'services.small.title': 'Küçük Grup Antrenmanı',
-    'services.small.desc': 'Maksimum 4 kişilik gruplarla kişiselleştirilmiş dikkat ve bireysel hedeflerinize odaklanma.',
+    'services.small.title': 'Bireysel Odaklı Özel Dersler',
+    'services.small.desc': 'Maksimum 4 kişiye kadar sınırlı katılımla, tamamen size özel ve kişisel hedeflerinize yönelik profesyonel antremanlar.',
     'services.custom.title': 'Özel Programlar',
     'services.custom.desc': 'Kuvvet, kardiyo, esneklik ve genel sağlığı kapsayan beklentilerinize göre tasarlanmış antrenmanlar.',
     'services.equipment.title': 'Modern Ekipman',
     'services.equipment.desc': 'Son teknoloji ekipmanlarla donatılmış temiz ve ferah bir stüdyo ortamı.',
-    'services.personal.title': 'Bire Bir Hizmet',
-    'services.personal.desc': 'Optimal sonuçlar ve güvenlik için kişisel yaklaşım ve rehberlik.',
+    'services.personal.title': 'Kişiye Özel Koçluk',
+    'services.personal.desc': 'Bireysel ihtiyaçlarınıza odaklanan profesyonel rehberlik ve güvenli bir antrenman deneyimi.',
     
     // Contact
     'contact.title': 'İletişime Geçin',
@@ -57,21 +57,21 @@ const translations = {
     'nav.contact': 'Contact',
     
     // Hero
-    'hero.title': 'Personalized Fitness Training in Small Groups',
-    'hero.subtitle': 'Tailored to Your Goals',
+    'hero.title': 'Professional and Personalized Fitness Journey Tailored to Your Goals',
+    'hero.subtitle': '',
     'hero.cta': 'Start Your Journey',
     
     // Services
     'services.title': 'Our Services',
     'services.subtitle': 'Comprehensive training programs designed to help you achieve your goals',
-    'services.small.title': 'Small Group Training',
-    'services.small.desc': 'Maximum 4-person groups ensuring personalized attention and focus on individual goals.',
+    'services.small.title': 'Individual Focused Private Lessons',
+    'services.small.desc': 'Professional training sessions completely tailored to you and your personal goals, with limited participation of up to 4 people maximum.',
     'services.custom.title': 'Custom Programs',
     'services.custom.desc': 'Training tailored to your expectations, covering strength, cardio, flexibility, and overall wellness.',
     'services.equipment.title': 'Modern Equipment',
     'services.equipment.desc': 'Clean, spacious studio environment equipped with state-of-the-art fitness equipment.',
-    'services.personal.title': 'One-on-One Service',
-    'services.personal.desc': 'Personal approach and guidance to ensure optimal results and safety.',
+    'services.personal.title': 'Personalized Coaching',
+    'services.personal.desc': 'Professional guidance focused on your individual needs and a safe training experience.',
     
     // Contact
     'contact.title': 'Get in Touch',
