@@ -79,10 +79,26 @@ Replace images in `src/assets/` directory:
 
 ### Deploy to GitHub Pages
 
-```bash
-npm run build
-# Deploy the dist folder to GitHub Pages
+This project includes automated GitHub Actions workflow for deployment.
+
+**Setup Steps:**
+
+1. Go to your GitHub repository Settings
+2. Navigate to Pages (under "Code and automation")
+3. Under "Build and deployment":
+   - Source: Select "GitHub Actions"
+4. Push to main branch - deployment happens automatically!
+
+**Important:** If your repository is not at the root of your GitHub account (e.g., `username.github.io/repository-name`), you need to update `vite.config.ts`:
+
+```typescript
+export default defineConfig(({ mode }) => ({
+  base: '/repository-name/', // Add this line with your repo name
+  // ... rest of config
+}));
 ```
+
+Your site will be available at: `https://username.github.io/repository-name/`
 
 ## 📞 Contact Information
 
@@ -175,6 +191,29 @@ Renk şemasını `src/index.css` ve `tailwind.config.ts` dosyalarında düzenley
 2. Repository'nizi Netlify veya Vercel'e bağlayın
 3. Build komutu: `npm run build`
 4. Publish dizini: `dist`
+
+### GitHub Pages'e Deploy
+
+Bu proje otomatik deployment için GitHub Actions workflow içerir.
+
+**Kurulum Adımları:**
+
+1. GitHub repository'nizin Settings'e gidin
+2. Pages bölümüne gidin ("Code and automation" altında)
+3. "Build and deployment" altında:
+   - Source: "GitHub Actions" seçin
+4. Main branch'e push yapın - deployment otomatik başlar!
+
+**Önemli:** Repository'niz GitHub hesabınızın root'unda değilse (örn. `username.github.io/repository-name`), `vite.config.ts` dosyasını güncellemeniz gerekir:
+
+```typescript
+export default defineConfig(({ mode }) => ({
+  base: '/repository-name/', // Repo adınızla bu satırı ekleyin
+  // ... diğer ayarlar
+}));
+```
+
+Siteniz şu adreste olacak: `https://username.github.io/repository-name/`
 
 ## 📞 İletişim Bilgileri
 
