@@ -29,7 +29,7 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 px-4 bg-background/50">
+    <section id="services" className="py-20 px-4 bg-muted/30">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 font-roboto">
@@ -44,7 +44,7 @@ const Services = () => {
           {services.map((service, index) => (
             <Card 
               key={index} 
-              className="group hover:shadow-glow transition-all duration-300 border-border bg-card/80 backdrop-blur-sm"
+              className="group hover:shadow-glow transition-all duration-300 border-border bg-card backdrop-blur-sm shadow-sm"
             >
               <CardHeader>
                 <div className="mb-4">
