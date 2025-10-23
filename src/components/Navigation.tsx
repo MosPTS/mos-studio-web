@@ -36,7 +36,7 @@ const Navigation = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 md:h-20">
+        <div className="flex justify-between items-center h-20 md:h-24">
           {/* Logo/Brand */}
           <button
             onClick={() => scrollToSection("home")}
@@ -45,7 +45,7 @@ const Navigation = () => {
             <img 
               src={logo} 
               alt="MOS Personal Training Studio" 
-              className="h-10 md:h-12 w-auto"
+              className="h-14 md:h-16 w-auto"
             />
           </button>
 

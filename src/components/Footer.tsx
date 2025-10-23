@@ -14,7 +14,7 @@ const Footer = () => {
             <img 
               src={logo} 
               alt="MOS Personal Training Studio" 
-              className="h-16 md:h-20 w-auto"
+              className="h-20 md:h-24 w-auto"
             />
           </div>
 
