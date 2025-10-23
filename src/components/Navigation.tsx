@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
+import logo from "@/assets/logo.png";
 
 const Navigation = () => {
   const { language, setLanguage, t } = useLanguage();
@@ -39,10 +40,13 @@ const Navigation = () => {
           {/* Logo/Brand */}
           <button
             onClick={() => scrollToSection("home")}
-            className="flex items-baseline gap-2 hover:opacity-80 transition-opacity"
+            className="hover:opacity-80 transition-opacity"
           >
-            <span className="text-xl md:text-2xl font-bold text-primary">MOS</span>
-            <span className="text-xs md:text-sm text-foreground font-medium">Personal Training Studio</span>
+            <img 
+              src={logo} 
+              alt="MOS Personal Training Studio" 
+              className="h-10 md:h-12 w-auto"
+            />
           </button>
 
           {/* Desktop Navigation */}

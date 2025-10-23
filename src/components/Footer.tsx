@@ -1,5 +1,6 @@
 import { MapPin, Phone, Mail, Instagram } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -10,10 +11,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
           <div>
-            <h3 className="text-2xl font-bold text-primary mb-2 font-roboto">MOS</h3>
-            <p className="text-sm text-muted-foreground font-roboto">
-              Personal Training Studio
-            </p>
+            <img 
+              src={logo} 
+              alt="MOS Personal Training Studio" 
+              className="h-16 md:h-20 w-auto"
+            />
           </div>
 
           {/* Quick Contact */}
