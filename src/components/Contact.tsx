@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { MapPin, Phone, Mail, Instagram } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -24,7 +25,7 @@ const Contact = () => {
     // Basic validation
     if (!formData.name || !formData.email || !formData.message) {
       toast({
-        title: "Error",
+        title: "Hata",
         description: t('contact.form.error'),
         variant: "destructive",
       });
@@ -36,8 +37,8 @@ const Contact = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
       toast({
-        title: "Error",
-        description: "Please enter a valid email address.",
+        title: "Hata",
+        description: "Lütfen geçerli bir e-posta adresi girin.",
         variant: "destructive",
       });
       setIsSubmitting(false);
@@ -45,28 +46,26 @@ const Contact = () => {
     }
 
     try {
-      // Using Formspree for form submission
-      const response = await fetch("https://formspree.io/f/xkgnkdnl", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: formData,
       });
 
-      if (response.ok) {
+      if (error) throw error;
+
+      if (data?.success) {
         toast({
-          title: "Success!",
+          title: "Başarılı!",
           description: t('contact.form.success'),
         });
         setFormData({ name: "", email: "", phone: "", message: "" });
       } else {
-        throw new Error("Failed to send message");
+        throw new Error("Email gönderimi başarısız oldu");
       }
     } catch (error) {
+      console.error("Contact form error:", error);
       toast({
-        title: "Error",
-        description: "Failed to send message. Please try again or contact us directly.",
+        title: "Hata",
+        description: "Mesaj gönderilemedi. Lütfen tekrar deneyin veya doğrudan bizimle iletişime geçin.",
         variant: "destructive",
       });
     } finally {
