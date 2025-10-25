@@ -54,8 +54,8 @@ const Contact = () => {
 
       if (data?.success) {
         toast({
-          title: "Başarılı!",
-          description: t('contact.form.success'),
+          title: t('contact.form.success.title'),
+          description: t('contact.form.success.desc'),
         });
         setFormData({ name: "", email: "", phone: "", message: "" });
       } else {

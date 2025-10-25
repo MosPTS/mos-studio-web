@@ -44,7 +44,8 @@ const translations = {
     'contact.form.email': 'E-posta Adresiniz',
     'contact.form.message': 'Mesajınız',
     'contact.form.submit': 'Gönder',
-    'contact.form.success': 'Mesajınız gönderildi! En kısa sürede size dönüş yapacağız.',
+    'contact.form.success.title': 'Mesajınız Bize Ulaştı!',
+    'contact.form.success.desc': 'En kısa zamanda size geri dönüş yapacağız. Teşekkür ederiz!',
     'contact.form.error': 'Lütfen tüm alanları doldurun.',
     
     // Footer
@@ -85,7 +86,8 @@ const translations = {
     'contact.form.email': 'Your Email',
     'contact.form.message': 'Your Message',
     'contact.form.submit': 'Send',
-    'contact.form.success': 'Your message has been sent! We will get back to you shortly.',
+    'contact.form.success.title': 'We Received Your Message!',
+    'contact.form.success.desc': 'We will get back to you as soon as possible. Thank you!',
     'contact.form.error': 'Please fill in all fields.',
     
     // Footer
