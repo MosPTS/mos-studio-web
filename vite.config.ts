@@ -29,4 +29,8 @@ export default defineConfig(({ mode }) => ({
       },
     },
   },
+  // GitHub Pages için özel ayarlar
+  define: {
+    __BASE_PATH__: JSON.stringify('/mos-studio-web/'),
+  },
 }));
