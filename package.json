@@ -7,6 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "build:dev": "vite build --mode development",
+    "build:gh-pages": "vite build --base=/mos-studio-web/",
+    "check-build": "node scripts/check-build.js",
     "lint": "eslint .",
     "preview": "vite preview",
     "preview:build": "vite build && vite preview"
