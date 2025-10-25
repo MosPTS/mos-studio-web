@@ -69,38 +69,45 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log("Admin email sent:", adminEmail);
 
-    // Confirmation email to user
-    const userEmailHtml = `
-      <h2>Merhaba ${name},</h2>
-      <p>Mesajınız bize ulaşmıştır. En kısa zamanda size geri dönüş yapacağız.</p>
-      <p>İletişim bilgilerimiz:</p>
-      <ul>
-        <li><strong>Telefon:</strong> +90 532 301 1997</li>
-        <li><strong>E-posta:</strong> mospersonalcoaching@gmail.com</li>
-        <li><strong>Instagram:</strong> @mos.personaltraining</li>
-        <li><strong>Adres:</strong> Demircikara Mahallesi, 1431 Sokak No:8/1, Antalya-Muratpaşa</li>
-      </ul>
-      <hr>
-      <p><strong>Gönderdiğiniz mesaj:</strong></p>
-      <p>${message}</p>
-      <hr>
-      <p style="color: #666; font-size: 12px;">Teşekkürler!<br>MOS Personal Training Studio</p>
-    `;
+    // Try to send confirmation email to user (optional - may fail if domain not verified)
+    let userEmailId = null;
+    try {
+      const userEmailHtml = `
+        <h2>Merhaba ${name},</h2>
+        <p>Mesajınız bize ulaşmıştır. En kısa zamanda size geri dönüş yapacağız.</p>
+        <p>İletişim bilgilerimiz:</p>
+        <ul>
+          <li><strong>Telefon:</strong> +90 532 301 1997</li>
+          <li><strong>E-posta:</strong> mospersonalcoaching@gmail.com</li>
+          <li><strong>Instagram:</strong> @mos.personaltraining</li>
+          <li><strong>Adres:</strong> Demircikara Mahallesi, 1431 Sokak No:8/1, Antalya-Muratpaşa</li>
+        </ul>
+        <hr>
+        <p><strong>Gönderdiğiniz mesaj:</strong></p>
+        <p>${message}</p>
+        <hr>
+        <p style="color: #666; font-size: 12px;">Teşekkürler!<br>MOS Personal Training Studio</p>
+      `;
 
-    const userEmail = await sendEmail(
-      email,
-      "Mesajınız Bize Ulaştı - MOS Studio",
-      userEmailHtml
-    );
+      const userEmail = await sendEmail(
+        email,
+        "Mesajınız Bize Ulaştı - MOS Studio",
+        userEmailHtml
+      );
 
-    console.log("User confirmation email sent:", userEmail);
+      console.log("User confirmation email sent:", userEmail);
+      userEmailId = userEmail.id;
+    } catch (userEmailError: any) {
+      // User email failed (likely due to unverified domain), but admin email succeeded
+      console.log("User confirmation email failed (expected if domain not verified):", userEmailError.message);
+    }
 
     return new Response(
       JSON.stringify({ 
         success: true,
         adminEmailId: adminEmail.id,
-        userEmailId: userEmail.id 
-      }), 
+        userEmailId: userEmailId 
+      }),
       {
         status: 200,
         headers: {
