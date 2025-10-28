@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 import logo from "@/assets/logo.png";
-import heroImage from "@/assets/hero-gym.jpg";
+import heroVideo from "@/assets/hero-video.mp4";
 
 const Hero = () => {
   const { t } = useLanguage();
@@ -13,11 +13,14 @@ const Hero = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
+      {/* Background Video with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src={heroImage} 
-          alt="Modern fitness training studio"
+        <video 
+          src={heroVideo}
+          autoPlay
+          loop
+          muted
+          playsInline
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-hero" />
