@@ -48,6 +48,9 @@ const translations = {
     'contact.form.success.desc': 'En kısa zamanda size geri dönüş yapacağız. Teşekkür ederiz!',
     'contact.form.error': 'Lütfen tüm alanları doldurun.',
     
+    // WhatsApp
+    'whatsapp.label': 'WhatsApp ile İletişime Geçin',
+    
     // Footer
     'footer.copyright': '© 2025 MOS Personal Training Studio. Tüm hakları saklıdır.',
   },
@@ -89,6 +92,9 @@ const translations = {
     'contact.form.success.title': 'We Received Your Message!',
     'contact.form.success.desc': 'We will get back to you as soon as possible. Thank you!',
     'contact.form.error': 'Please fill in all fields.',
+    
+    // WhatsApp
+    'whatsapp.label': 'Contact via WhatsApp',
     
     // Footer
     'footer.copyright': '© 2025 MOS Personal Training Studio. All rights reserved.',
