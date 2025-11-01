@@ -24,7 +24,7 @@ const translations = {
     'services.title': 'Hizmetlerimiz',
     'services.subtitle': 'Hedeflerinize ulaşmanıza yardımcı olacak kapsamlı antrenman programları',
     'services.small.title': 'Bireysel Odaklı Özel Dersler',
-    'services.small.desc': 'Maksimum 4 kişiye kadar sınırlı katılımla, tamamen size özel ve kişisel hedeflerinize yönelik profesyonel antremanlar.',
+    'services.small.desc': 'Maksimum 4 kişiye kadar sınırlı katılımla, tamamen size özel ve kişisel hedeflerinize yönelik profesyonel antrenmanlar.',
     'services.custom.title': 'Özel Programlar',
     'services.custom.desc': 'Kuvvet, kardiyo, esneklik ve genel sağlığı kapsayan beklentilerinize göre tasarlanmış antrenmanlar.',
     'services.equipment.title': 'Modern Ekipman',
